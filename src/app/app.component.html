@@ -1,0 +1,59 @@
+
+<main class="main">
+  <div class="content">
+
+    <div class="left-side">
+     
+      <!--#region my code-->
+      
+      <h5>Two Way binding, {{ title }}</h5> 
+      
+      <!-- <input type="text" [(ngModel)]="textboxValue" placeholder="Enter text">
+      <p>You entered: {{textboxValue}}</p> -->
+
+      <!-- <input type="text" #txt placeholder="Enter Your Name"> -->
+      <input type="text" (keyup)="getTextBoxVal(fnameBox.value,lnameBox.value)" #fnameBox placeholder="Enter Your FName" name="fnameBox">
+      <br><br>   
+      <input type="text" (keyup)="getTextBoxVal(fnameBox.value,lnameBox.value)" #lnameBox placeholder="Enter Your LName" name="lnameBox">
+      <br><br>   
+      <h2 ngClass=myColor >  {{displayName}}</h2>
+      <!-- #endregion -->
+      <p>---------------------------------------</p>
+
+      <div *ngIf="isdisplayName; then thenBlock; else elseBlock">  </div>
+      
+      <h2 *ngIf="fruit ==='Banana'"> 
+        Your Selected Fruit is Banana 
+      </h2>
+
+      <ng-template #thenBlock> 
+        <h2 >Show</h2>
+      </ng-template>
+      <ng-template #elseBlock> 
+        <h2 >Hidden</h2> 
+      </ng-template>
+
+      <p>---------------------------------------</p>
+      <ol>
+        <li *ngFor='let i of a' > </li>
+      </ol>   
+
+      <p>-------------Passing Data From Parent to Child Component---------------------</p>
+
+      <!-- myData is property -->
+      <app-child [myData]="title"></app-child>
+      <app-child [myDataArray]="fruits"></app-child>
+      <app-child [myDataObj]="obj"></app-child>
+      <button (click)="changeData()" > Change Data  </button>
+      
+      <p>-------------Passing Data From Child to Parent Component---------------------</p>
+      <h5> {{msg}} </h5>   
+      <app-pass-data-cto-p (childEvent)="msg=$event"></app-pass-data-cto-p>
+
+    </div>
+
+  </div>
+</main>
+
+
+
