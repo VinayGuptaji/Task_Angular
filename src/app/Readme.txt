@@ -1,0 +1,12 @@
+  - `app`: This directory contains all the components, services, models, and modules of your Angular application.
+    - `components`: This directory typically contains individual components of your application.
+      - `my-component`: A sample component directory containing the files related to the `MyComponent`.
+        - `my-component.component.html`: HTML template for the component.
+        - `my-component.component.ts`: TypeScript code for the component.
+        - `my-component.component.css`: CSS or SCSS styling for the component.
+    - `services`: This directory contains services, which are responsible for fetching or manipulating data.
+      - `my-service.service.ts`: Example service file.
+    - `models`: This directory houses data models used within your application.
+      - `my-model.ts`: Example model file.
+    - `modules`: This directory contains feature modules of your application.
+      - `app.module.ts`: The root module of your application.

@@ -44,12 +44,20 @@
       <app-child [myData]="title"></app-child>
       <app-child [myDataArray]="fruits"></app-child>
       <app-child [myDataObj]="obj"></app-child>
+
       <button (click)="changeData()" > Change Data  </button>
       
       <p>-------------Passing Data From Child to Parent Component---------------------</p>
       <h5> {{msg}} </h5>   
       <app-pass-data-cto-p (childEvent)="msg=$event"></app-pass-data-cto-p>
 
+      <h5>-------------Getting Data from API---------------------</h5>
+      <ol>
+        <li *ngFor="let p of posts">
+        {{p.title}} --Id = {{p.id}} 
+        </li>
+      </ol>
+     
     </div>
 
   </div>

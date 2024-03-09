@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 import { PassDataCtoPComponent } from './pass-data-cto-p/pass-data-cto-p.component';
+import { MyservicesService } from './services/myservices.service';
+import  {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
 
@@ -16,9 +18,12 @@ import { PassDataCtoPComponent } from './pass-data-cto-p/pass-data-cto-p.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  // providers: [],
+  providers:[MyservicesService],    // registering the services on App level , i can use this service on all my component
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
